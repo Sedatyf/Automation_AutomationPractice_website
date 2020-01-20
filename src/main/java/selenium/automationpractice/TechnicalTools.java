@@ -18,12 +18,12 @@ public class TechnicalTools {
 	static WebDriver chooseBrowser(EBrowsers e) {
 		switch (e) {
 		case Chrome:
-			System.setProperty("webdriver.chrome.driver", "src/test/drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 			driver = new ChromeDriver();
 			System.out.println("Le navigateur choisis est Chrome");
 			return driver;
 		case Firefox:
-			System.setProperty("webdriver.chrome.driver", "src/test/drivers/geckodriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/usr/local/bin/geckodriver");
 			driver = new FirefoxDriver();
 			System.out.println("Le navigateur choisis est Firefox");
 			return driver;
