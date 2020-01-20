@@ -39,7 +39,7 @@ public class Test_RegisterAccount {
 	}
 
 	@Test
-	public void test() throws InterruptedException {
+	public void test() throws Exception {
 		driver.get("http://automationpractice.com/index.php");
 
 		PageIndex page_index = PageFactory.initElements(driver, PageIndex.class);
@@ -60,6 +60,7 @@ public class Test_RegisterAccount {
 		TechnicalTools.fillInput(page_create_account.input_address_1, address);
 		TechnicalTools.fillInput(page_create_account.input_city, city);
 		page_create_account.selectState(state_value);
+		TechnicalTools.takeSnapShot(driver, ".\\src\\test\\snapshots\\texas.jpg");
 		TechnicalTools.fillInput(page_create_account.input_postcode, postcode);
 		TechnicalTools.fillInput(page_create_account.input_mobile_phone, phone_number);
 

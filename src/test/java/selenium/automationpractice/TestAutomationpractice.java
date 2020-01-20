@@ -6,6 +6,7 @@ import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class TestAutomationpractice {
@@ -24,12 +25,12 @@ public class TestAutomationpractice {
 	}
 	
 	@Test
-	public void testAutomationPractice() {
+	public void testAutomationPractice() throws Exception {
 		driver.get("http://automationpractice.com/index.php");
 		driver.findElement(By.xpath("//*[contains(@title, 'Log in')]")).click();
 		assertEquals("AUTHENTICATION", driver.findElement(By.xpath("//h1")).getText());
 		
-		driver.findElement(By.id("email_create")).sendKeys("top@shopping.com");
+		driver.findElement(By.id("email_create")).sendKeys("test@shopping.com");
 		driver.findElement(By.id("SubmitCreate")).click();
 		assertEquals("YOUR PERSONAL INFORMATION", driver.findElement(By.xpath("//*[@id=\"account-creation_form\"]/div[1]/h3")).getText());
 		
@@ -71,6 +72,11 @@ public class TestAutomationpractice {
 		
 		driver.findElement(By.id("submitAccount")).click();
 		assertEquals("MY ACCOUNT", driver.findElement(By.xpath("//h1")).getText());
+		
+		WebElement clickLogo = driver.findElement(By.xpath("//img[contains(@src, 'logo.jpg')]"));
+		clickLogo.click();
+		
+		Actions action = new Actions(driver);
 	}
 
 }
