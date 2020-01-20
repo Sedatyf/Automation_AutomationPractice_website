@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class TechnicalTools {
@@ -17,11 +18,13 @@ public class TechnicalTools {
 	static WebDriver chooseBrowser(EBrowsers e) {
 		switch (e) {
 		case Chrome:
-			System.setProperty("webdriver.chrome.driver", "/home/autom/WebDrivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/test/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 			System.out.println("Le navigateur choisis est Chrome");
 			return driver;
 		case Firefox:
+			System.setProperty("webdriver.chrome.driver", "src/test/drivers/geckodriver.exe");
+			driver = new FirefoxDriver();
 			System.out.println("Le navigateur choisis est Firefox");
 			return driver;
 		default:
